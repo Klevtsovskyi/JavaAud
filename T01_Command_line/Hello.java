@@ -5,14 +5,14 @@ import java.util.Scanner;
 // 1.8
 // javadoc -docencoding cp1251 -charset cp1251 -author -version Hello.java
 
-/** Програма Hello
+/** РџСЂРѕРіСЂР°РјР° Hello
  * @author Arsen Klevtsovskyi
  * @version 1.0
  */
 public class Hello {
 
-	/** Головна функція
-	 * @param args - аргументи командноо рядка
+	/** Р“РѕР»РѕРІРЅР° С„СѓРЅРєС†С–СЏ
+	 * @param args - Р°СЂРіСѓРјРµРЅС‚Рё РєРѕРјР°РЅРґРЅРѕРѕ СЂСЏРґРєР°
 	 */
 	public static void main(String[] args) {
 		// 1.2
@@ -20,7 +20,7 @@ public class Hello {
 		// 1.7
 		Scanner in = new Scanner(System.in);
 		String name = in.nextLine();
-		System.out.printf("Привіт, %s!\n", name);
+		System.out.printf("РџСЂРёРІС–С‚, %s!\n", name);
 		double s = 0;
 		// 1.5
 		// 1.6
