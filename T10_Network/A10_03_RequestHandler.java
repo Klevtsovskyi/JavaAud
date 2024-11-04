@@ -1,4 +1,4 @@
-package Aud10_Network;
+package T10_Network;
 
 import java.io.BufferedReader;
 import java.io.IOException;
