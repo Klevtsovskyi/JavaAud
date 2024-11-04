@@ -1,4 +1,4 @@
-package Aud10_Network;
+package T10_Network;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,23 +21,18 @@ public class A10_03_RequestHandler extends BaseDataExchange implements Runnable 
 	public void run() {
 		try {init();} 
 		catch (IOException e) {
-//			e.printStackTrace();
+			System.err.println("Не вдалося з'єднатися з клієнтом");
+			return;
 		}
 		try {handle();} 
-		catch (IOException e) {
+		catch (Exception e) {
 			System.err.println("Клієнт " + socket.getRemoteSocketAddress() + " роз'єднався");
-//			e.printStackTrace();
-		}
-		catch (NumberFormatException e) {
-//			e.printStackTrace();
 		}
 		try {finish();} 
-		catch (IOException e) {
-//			e.printStackTrace();
-		}
+		catch (IOException e) {}
 	}
 	
-	protected Boolean noClient(int i) {
+	protected boolean noClient(int i) {
 		return server.getClient(i) == null;
 	}
 	protected void setClient(int i, A10_03_RequestHandler client) {
@@ -83,8 +78,10 @@ public class A10_03_RequestHandler extends BaseDataExchange implements Runnable 
 	}
 	
 	protected void finish() throws IOException {
-		if (socket != null) socket.close();
+		if (socket != null) {
+			socket.close();
+			System.out.println("Роз'єднано з " + socket.getRemoteSocketAddress() + " як клієнта " + no);
+		}
 		setClient(no, null);
-		System.out.println("Роз'єднано з " + socket.getRemoteSocketAddress() + " як клієнта " + no);
 	}
 }

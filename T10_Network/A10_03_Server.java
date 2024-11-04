@@ -1,4 +1,4 @@
-package Aud10_Network;
+package T10_Network;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -16,7 +16,10 @@ public class A10_03_Server {
 			server = new ServerSocket(port);
 			System.out.println("Сервер запущено на " + server.getLocalSocketAddress());
 		} 
-		catch (IOException e) {e.printStackTrace();}
+		catch (IOException e) {
+			e.printStackTrace();
+			return;
+		}
 		
 		while (true) {
 			try {
@@ -25,7 +28,6 @@ public class A10_03_Server {
 			} 
 			catch (IOException e) {
 				System.err.println("Клієнт " + conn.getRemoteSocketAddress() + " роз'єднався");
-//				e.printStackTrace();
 			}
 			
 		}
