@@ -10,7 +10,7 @@ public class A09_00_RaceCondition {
 	public static void main(String[] args) {
 		Thread th1 = new Thread(new MyThread());
 		Thread th2 = new Thread(new MyThread());
-		
+
 		th1.start();
 		th2.start();
 		
